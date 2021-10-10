@@ -53,9 +53,9 @@ function move() {
         (currentSnake[0] % width === 0 && direction === -1) || //if snake has hit left wall
         (currentSnake[0] - width < 0 && direction === -width) || //if snake has hit top
         squares[currentSnake[0] + direction].classList.contains('snake')
-    )
-    return clearInterval(timerId)
-
+    ) { scoreDisplay.textContent = "Game Over!"
+        return clearInterval(timerId)
+    }
     //remove last element from our currentSnake array
     const tail = currentSnake.pop()
     //remove styling from last element
